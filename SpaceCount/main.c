@@ -8,11 +8,19 @@
 
 #include <stdio.h>
 
+int spaceCount(const char *sentence){
+    int numString = 0;
+    for (int i = 0; i <= strlen(sentence); i++) {
+        if (sentence[i] == 0x20) {
+            numString++;
+        }
+    }
+    return numString;
+}
+
 int main(int argc, const char * argv[])
 {
-
-    // insert code here...
-    printf("Hello, World!\n");
-    return 0;
+    const char *sentence = "He was not in the cab at the time.";
+    printf("\"%s\" has %d spaces",sentence, spaceCount(sentence));
 }
 
